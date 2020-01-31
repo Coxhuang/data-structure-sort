@@ -2,7 +2,7 @@
 """
 @Time ： 2020/1/31 16:28
 @Auth ： Minhang
-@File ：InsertSort.py
+@File ：insert_sort.py
 @IDE  ：PyCharm
 """
 from insert_sort.straight_insertion_sort.straight_insertion_sort import StraightInsertionSortCls
