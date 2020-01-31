@@ -2,7 +2,7 @@
 """
 @Time ： 2020/1/31 16:04
 @Auth ： Minhang
-@File ：insert_sort.py
+@File ：straight_insertion_sort.py
 @IDE  ：PyCharm
 """
 

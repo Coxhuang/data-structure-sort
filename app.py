@@ -16,5 +16,7 @@ if __name__ == '__main__':
     sort_handle = MySort()
     ret = sort_handle.straight_insertion_sort(target_list) # 插入排序-直接插入排序
     print(ret)
+    ret = sort_handle.shells_method(target_list) # 插入排序-希尔排序
+    print(ret)
 
 

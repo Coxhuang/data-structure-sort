@@ -5,8 +5,9 @@
 @File ：InsertSort.py
 @IDE  ：PyCharm
 """
-from insert_sort.straight_insertion_sort.insert_sort import StraightInsertionSortCls
+from insert_sort.straight_insertion_sort.straight_insertion_sort import StraightInsertionSortCls
+from insert_sort.shells_method.shells_method import ShellsMethodCls
 
-class InsertSort(StraightInsertionSortCls):
+class InsertSort(StraightInsertionSortCls, ShellsMethodCls):
     """插入排序"""
     pass
