@@ -21,5 +21,7 @@ if __name__ == '__main__':
     print(ret)
     ret = sort_handle.straight_selection_sort(target_list) # 选择排序-直接选择排序
     print(ret)
+    ret = sort_handle.heap_sort(target_list)  # 选择排序-堆排序
+    print(ret)
 
 

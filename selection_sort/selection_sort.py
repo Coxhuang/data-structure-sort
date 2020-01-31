@@ -6,7 +6,8 @@
 @IDE  ：PyCharm
 """
 from selection_sort.straight_selection_sort.straight_selection_sort import StraightSelectionSort
+from selection_sort.heap_sort.heap_sort import TreeSelectionSortCla
 
-class SelectionSort(StraightSelectionSort, ):
+class SelectionSort(StraightSelectionSort, TreeSelectionSortCla):
     """选择排序"""
     pass
