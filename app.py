@@ -26,5 +26,7 @@ if __name__ == '__main__':
     print(ret)
     ret = sort_handle.bubble_sort(target_list)  # 交换排序排序-冒泡排序
     print(ret)
+    # ret = sort_handle.quick_sort(target_list)  # 交换排序排序-快排序
+    # print(ret)
 
 
