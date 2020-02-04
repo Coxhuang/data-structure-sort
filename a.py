@@ -182,9 +182,11 @@ class MyFirstVisit(object):
 
     # TODO __init__
     def __init__(self):
-        self.target_id = "1112"
-        self.data_api = "https://job.xiyanghui.com/api/q1/json"
-        self.stack_list = []
+        self.target_id = 1112 # 用户输入值
+        self.data_api = "https://job.xiyanghui.com/api/q1/json" # api接口
+        self.stack_list = [] # 栈
+        self.stack_output = []
+        self.current_node = "" # 当前节点所在位置
 
 
     def has_left_child(self, node):
@@ -390,9 +392,44 @@ class MyFirstVisit(object):
         # 遍历接口数据, 因为根节点数据为空, 所以分别遍历根节点的左右孩子
         for item in self.data:
             print(item)
-            
+            self.stack_list.append(item) # 根节点左孩子压栈
+            self.current_node = item # 游标移动到根节点的左孩子
+
+            while self.stack_list or self.current_node:
+                # 只要栈不为空且当前节点的值不为空, 就一直循环遍历
+
+                while self.current_node:
+                    # 一直遍历到左孩子为空为止
+                    if self.check_node_id(self.current_node):
+                        # 找到目标值
+                        print("回溯")
+                        print(self.stack_list)
+                    else:
+                        # 没有找到目标值
+                        if self.has_left_child(self.current_node):
+                            # 有左孩子
+                            # 游标移动到左孩子
+                            self.current_node = self.get_left_child(self.current_node)
+                            # 左孩子数据压栈
+                            self.stack_list.append(self.current_node)
+                        else:
+                            # 没有左孩子
+                            # 游标置为空
+                            self.current_node = {}
+
+                # 左孩子为空, 栈顶元素出栈, 游标移动到栈顶元素的右孩子
+                self.current_node = self.stack_list.pop()
+                if self.has_right_child(self.current_node):
+                    # 有右孩子
+                    # 游标移动到右孩子
+                    self.current_node = self.get_right_child(self.current_node)
+                else:
+                    # 没有右孩子
+                    # 游标置为空
+                    self.current_node = {}
 
         return None
+
     # TODO run
     def run(self):
 
@@ -401,6 +438,7 @@ class MyFirstVisit(object):
         # print(self.data)
         # 先序遍历
         self.first_visit()
+        print(self.stack_list)
         return None
 
 
