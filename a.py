@@ -187,6 +187,7 @@ class MyFirstVisit(object):
         self.stack_list = [] # 栈
         self.stack_output = []
         self.current_node = "" # 当前节点所在位置
+        self.stop = False
 
 
     def has_left_child(self, node):
@@ -319,56 +320,56 @@ class MyFirstVisit(object):
             }
         ]
     },
-    {
-        "id": 2000,
-        "name": "男士",
-        "children": [
-            {
-                "id": 2100,
-                "name": "服装",
-                "children": [
-                    {
-                        "id": 4110,
-                        "name": "上衣",
-                        "children": [
-                            {
-                                "id": 2111,
-                                "name": "T恤"
-                            },
-                            {
-                                "id": 2112,
-                                "name": "POLO衫"
-                            }
-                        ]
-                    },
-                    {
-                        "id": 2124,
-                        "name": "西装"
-                    }
-                ]
-            },
-            {
-                "id": 3212,
-                "name": "鞋履",
-                "children": [
-                    {
-                        "id": 2210,
-                        "name": "平底鞋"
-                    },
-                    {
-                        "id": 2220,
-                        "name": "运动鞋",
-                        "children": [
-                            {
-                                "id": 2221,
-                                "name": "篮球鞋"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    }
+    # {
+    #     "id": 2000,
+    #     "name": "男士",
+    #     "children": [
+    #         {
+    #             "id": 2100,
+    #             "name": "服装",
+    #             "children": [
+    #                 {
+    #                     "id": 4110,
+    #                     "name": "上衣",
+    #                     "children": [
+    #                         {
+    #                             "id": 2111,
+    #                             "name": "T恤"
+    #                         },
+    #                         {
+    #                             "id": 2112,
+    #                             "name": "POLO衫"
+    #                         }
+    #                     ]
+    #                 },
+    #                 {
+    #                     "id": 2124,
+    #                     "name": "西装"
+    #                 }
+    #             ]
+    #         },
+    #         {
+    #             "id": 3212,
+    #             "name": "鞋履",
+    #             "children": [
+    #                 {
+    #                     "id": 2210,
+    #                     "name": "平底鞋"
+    #                 },
+    #                 {
+    #                     "id": 2220,
+    #                     "name": "运动鞋",
+    #                     "children": [
+    #                         {
+    #                             "id": 2221,
+    #                             "name": "篮球鞋"
+    #                         }
+    #                     ]
+    #                 }
+    #             ]
+    #         }
+    #     ]
+    # }
 ]
 
         return None
@@ -391,19 +392,22 @@ class MyFirstVisit(object):
 
         # 遍历接口数据, 因为根节点数据为空, 所以分别遍历根节点的左右孩子
         for item in self.data:
-            print(item)
+            # print(item)
             self.stack_list.append(item) # 根节点左孩子压栈
             self.current_node = item # 游标移动到根节点的左孩子
 
-            while self.stack_list or self.current_node:
+            while (self.stack_list or self.current_node) and not self.stop:
                 # 只要栈不为空且当前节点的值不为空, 就一直循环遍历
 
-                while self.current_node:
+                while self.current_node and not self.stop:
                     # 一直遍历到左孩子为空为止
                     if self.check_node_id(self.current_node):
                         # 找到目标值
                         print("回溯")
-                        print(self.stack_list)
+                        # print(self.stack_list)
+                        self.stop = True
+                        self.stack_output = self.stack_list
+                        break
                     else:
                         # 没有找到目标值
                         if self.has_left_child(self.current_node):
@@ -423,12 +427,24 @@ class MyFirstVisit(object):
                     # 有右孩子
                     # 游标移动到右孩子
                     self.current_node = self.get_right_child(self.current_node)
+                    self.stack_list.append(self.current_node)
                 else:
                     # 没有右孩子
                     # 游标置为空
                     self.current_node = {}
 
         return None
+
+    def push_stack(self):
+        """
+        出栈
+        :return:
+        """
+        while self.stack_output:
+            temp = self.stack_output.pop()
+            print(temp["name"])
+
+        return
 
     # TODO run
     def run(self):
@@ -439,6 +455,7 @@ class MyFirstVisit(object):
         # 先序遍历
         self.first_visit()
         print(self.stack_list)
+        self.push_stack()
         return None
 
 
