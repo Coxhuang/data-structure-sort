@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@Time ： 2020/2/4 13:37
-@Auth ： Minhang
-@File ：a.py
+@环境 ： Python3.8
 @IDE  ：PyCharm
 """
 
@@ -16,12 +14,8 @@ class MyLastVisit(object):
     def __init__(self, target_id):
         self.target_id = target_id # 用户输入值
         self.data_api = "https://job.xiyanghui.com/api/q1/json" # api接口
-        self.stack_list1 = [] # 栈
-        self.stack_list2 = [] # 栈
-        self.stack_output = []
-        self.current_node = "" # 当前节点所在位置
-        self.stop = False
-
+        self.stack_list1 = [] # 栈1
+        self.stack_list2 = [] # 栈2
 
     def has_left_child(self, node):
         """
@@ -105,105 +99,6 @@ class MyLastVisit(object):
         """
 
         self.data = requests.get(self.data_api).json()
-#         self.data = [
-#     {
-#         "id": 1000,
-#         "name": "女士",
-#         "children": [
-#             {
-#                 "id": 1100,
-#                 "name": "服装",
-#                 "children": [
-#                     {
-#                         "id": 1110,
-#                         "name": "裙",
-#                         "children": [
-#                             {
-#                                 "id": 1111,
-#                                 "name": "连衣裙a"
-#                             },
-#                             {
-#                                 "id": 1112,
-#                                 "name": "连衣裙b"
-#                             }
-#                         ]
-#                     },
-#                     {
-#                         "id": 1120,
-#                         "name": "针织衫"
-#                     },{
-#                         "id": 1121,
-#                         "name": "针织衫a"
-#                     }
-#                 ]
-#             },
-#             {
-#                 "id": 1200,
-#                 "name": "鞋履",
-#                 "children": [
-#                     {
-#                         "id": 1210,
-#                         "name": "高跟鞋"
-#                     },
-#                     {
-#                         "id": 1220,
-#                         "name": "靴子"
-#                     }
-#                 ]
-#             }
-#         ]
-#     },
-#     # {
-#     #     "id": 2000,
-#     #     "name": "男士",
-#     #     "children": [
-#     #         {
-#     #             "id": 2100,
-#     #             "name": "服装",
-#     #             "children": [
-#     #                 {
-#     #                     "id": 4110,
-#     #                     "name": "上衣",
-#     #                     "children": [
-#     #                         {
-#     #                             "id": 2111,
-#     #                             "name": "T恤"
-#     #                         },
-#     #                         {
-#     #                             "id": 2112,
-#     #                             "name": "POLO衫"
-#     #                         }
-#     #                     ]
-#     #                 },
-#     #                 {
-#     #                     "id": 2124,
-#     #                     "name": "西装"
-#     #                 }
-#     #             ]
-#     #         },
-#     #         {
-#     #             "id": 3212,
-#     #             "name": "鞋履",
-#     #             "children": [
-#     #                 {
-#     #                     "id": 2210,
-#     #                     "name": "平底鞋"
-#     #                 },
-#     #                 {
-#     #                     "id": 2220,
-#     #                     "name": "运动鞋",
-#     #                     "children": [
-#     #                         {
-#     #                             "id": 2221,
-#     #                             "name": "篮球鞋"
-#     #                         }
-#     #                     ]
-#     #                 }
-#     #             ]
-#     #         }
-#     #     ]
-#     # }
-# ]
 
         return None
 
@@ -227,7 +122,7 @@ class MyLastVisit(object):
         data = node.get("children",[])
         return data
 
-    def cut_tree(self, node):
+    def cut_tree_branch(self, node):
         """
         切树枝
         :param node: 节点 (list)
@@ -237,9 +132,9 @@ class MyLastVisit(object):
         if self.check_node_id(node): # 栈顶找到目标id
             return node, False # 返回整个节点, 退出while死循环
 
-        node_temp = copy.copy(node["children"])
-        len_node = len(node["children"])
         try:
+            node_temp = copy.copy(node["children"])
+            len_node = len(node["children"])
             i = 0
             for index in range(len_node):
                 child_str = str(node_temp[index])
@@ -259,32 +154,32 @@ class MyLastVisit(object):
         :return: bool
         """
 
-        self.stack_list1.append(node) # 压栈
+        self.stack_list1.append(node) # 根节点压栈
         flag_stop = False
 
-        while self.stack_list1:
+        while self.stack_list1: # 栈不为空
 
             stack_top = self.stack_list1.pop() # 栈顶元素出栈
-            self.stack_list2.append(stack_top)
+            self.stack_list2.append(stack_top) # 后序遍历-输出节点
 
-            stack_top, ret = self.cut_tree(stack_top) # 切掉没用的树枝
+            stack_top, ret = self.cut_tree_branch(stack_top) # 切掉没用的树枝
             if not ret: # 栈顶元素找到目标id
                 break # 退出while
 
-            if self.has_left_child(stack_top): # 栈顶元素有左孩子
+            if self.has_left_child(stack_top): # 先左-栈顶元素有左孩子
                 left_child = self.get_left_child(stack_top)
                 self.stack_list1.append(left_child)  # 左孩子压栈
-                if self.check_node_id(left_child):
-                    self.stack_list2.append(left_child)
-                    flag_stop = True
+                if self.check_node_id(left_child): # 找到目标id
+                    self.stack_list2.append(left_child) # 目标id对应的节点压栈
+                    flag_stop = True #
                     break
 
-            if self.has_right_child(stack_top): # 栈顶元素有右孩子
+            if self.has_right_child(stack_top): # 后右-栈顶元素有右孩子
                 right_child = self.get_right_child(stack_top)
                 self.stack_list1.append(right_child)  # 右孩子压栈
-                if self.check_node_id(right_child):
-                    self.stack_list2.append(right_child)
-                    flag_stop = True
+                if self.check_node_id(right_child): # 找到目标id
+                    self.stack_list2.append(right_child) # 目标id对应的节点压栈
+                    flag_stop = True #
                     break
 
         return flag_stop
@@ -292,27 +187,31 @@ class MyLastVisit(object):
     def search_data(self):
         """
         查找
-        :return:
+        :return: 最终结果(str)
         """
 
         flag_stop = self.last_visit(self.data[0])
-        if not flag_stop:
-            self.stack_list1 = []
-            self.stack_list2 = []
-            self.last_visit(self.data[1])
+        if not flag_stop: # 进入男士分支, 因为根节点为空, 所以将女士和男士分开查找
+            self.stack_list1 = [] # 栈清空
+            self.stack_list2 = [] # 栈清空
+            flag_stop = self.last_visit(self.data[1]) # 查找男士分支
 
-        return None
+        if not flag_stop: # 未找到目标id
+            self.stack_list1 = []  # 栈清空
+            self.stack_list2 = [{"name":"未找到"}]
+
+        ret_list = [(foo["name"] + "") if index + 1 == len(self.stack_list2) else foo["name"] + " > " for index, foo in enumerate(self.stack_list2)]
+        output_info = "".join(ret_list)
+        print("输出 {}".format(output_info))
+
+        return output_info
 
     # TODO run
     def run(self):
 
-        self.get_data() # 获取接口数据
+        self.get_data() # 获取api接口数据
 
-        self.search_data() # 后序遍历
-
-        ret_list = [(foo["name"]+"") if index+1 == len(self.stack_list2) else foo["name"]+" > " for index,foo in enumerate(self.stack_list2)]
-        output_info = "".join(ret_list)
-        print("输出 {}".format(output_info))
+        output_info = self.search_data() # 后序遍历
 
         return output_info
 

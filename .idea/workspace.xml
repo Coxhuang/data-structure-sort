@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c16849dc-9cd6-4922-b574-bff1f81db7b3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/a.py" afterPath="$PROJECT_DIR$/a.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/c.py" afterPath="$PROJECT_DIR$/c.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test2.py" afterPath="$PROJECT_DIR$/test2.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,10 +16,10 @@
     <SUITE FILE_PATH="coverage/data-structure-sort$test.coverage" NAME="test Coverage Results" MODIFIED="1580792112975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/data-structure-sort$b.coverage" NAME="b Coverage Results" MODIFIED="1580836609544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/data-structure-sort$app.coverage" NAME="app Coverage Results" MODIFIED="1580479777430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/data-structure-sort$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1580798161976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/data-structure-sort$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1581086698954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/data-structure-sort$insert_sort.coverage" NAME="insert_sort Coverage Results" MODIFIED="1580457602912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/1.插入排序/1.1直接插入排序" />
     <SUITE FILE_PATH="coverage/data-structure-sort$c.coverage" NAME="c Coverage Results" MODIFIED="1581081654022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/data-structure-sort$a.coverage" NAME="a Coverage Results" MODIFIED="1581082698172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/data-structure-sort$a.coverage" NAME="a Coverage Results" MODIFIED="1581086612413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -31,8 +30,8 @@
       <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="122" column="25" lean-forward="false" selection-start-line="122" selection-start-column="25" selection-end-line="122" selection-end-column="25" />
+            <state relative-caret-position="-1769">
+              <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
               <folding>
                 <element signature="e#1166#2570#0" expanded="false" />
               </folding>
@@ -40,14 +39,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="a.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="a.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/a.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="4" column="11" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="322" selection-end-column="0" />
+            <state relative-caret-position="229">
+              <caret line="219" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
               <folding>
-                <element signature="e#99#114#0" expanded="true" />
-                <element signature="e#2233#2256#0" expanded="false" />
+                <element signature="e#64#79#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="b.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/b.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test2.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="98" column="27" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+              <folding>
+                <element signature="e#88#103#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,6 +96,9 @@
       <find>push_stack</find>
       <find>stack_list</find>
       <find>get_data</find>
+      <find>stack_output</find>
+      <find>current_node</find>
+      <find>stop</find>
     </findStrings>
     <replaceStrings>
       <replace>right</replace>
@@ -108,10 +131,10 @@
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/swap_sort/bubble_sort/bubble_sort.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/test2.py" />
         <option value="$PROJECT_DIR$/b.py" />
         <option value="$PROJECT_DIR$/c.py" />
         <option value="$PROJECT_DIR$/a.py" />
+        <option value="$PROJECT_DIR$/test2.py" />
       </list>
     </option>
   </component>
@@ -185,7 +208,7 @@
       <recent name="$PROJECT_DIR$/insert_sort/shells_method" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.a">
+  <component name="RunManager" selected="Python.test2">
     <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -499,10 +522,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.a" />
-        <item index="1" class="java.lang.String" itemvalue="Python.c" />
-        <item index="2" class="java.lang.String" itemvalue="Python.b" />
-        <item index="3" class="java.lang.String" itemvalue="Python.test2" />
+        <item index="0" class="java.lang.String" itemvalue="Python.test2" />
+        <item index="1" class="java.lang.String" itemvalue="Python.a" />
+        <item index="2" class="java.lang.String" itemvalue="Python.c" />
+        <item index="3" class="java.lang.String" itemvalue="Python.b" />
         <item index="4" class="java.lang.String" itemvalue="Python.test" />
       </list>
     </recent_temporary>
@@ -561,13 +584,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/a.py</url>
-          <line>267</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -575,7 +591,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="29" />
+      <option name="time" value="30" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -676,32 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/b.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="122" column="25" lean-forward="false" selection-start-line="122" selection-start-column="25" selection-end-line="122" selection-end-column="25" />
-          <folding>
-            <element signature="e#1166#2570#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/c.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -710,13 +700,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1769">
+          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding>
+            <element signature="e#1166#2570#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/a.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="11" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="322" selection-end-column="0" />
+        <state relative-caret-position="229">
+          <caret line="219" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
           <folding>
-            <element signature="e#99#114#0" expanded="true" />
-            <element signature="e#2233#2256#0" expanded="false" />
+            <element signature="e#64#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="98" column="27" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding>
+            <element signature="e#88#103#0" expanded="true" />
           </folding>
         </state>
       </provider>

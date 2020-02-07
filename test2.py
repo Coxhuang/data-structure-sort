@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
-@Time ： 2020/2/4 13:02
-@Auth ： Minhang
-@File ：test2.py
+@环境 ： Python3.8
 @IDE  ：PyCharm
 """
 
@@ -90,13 +89,13 @@ class RateConverter(object):
 
         check_ret = self.check_input_info()
         if check_ret:
-            print("输入:{}, 输出:{}".format(self.money, self.exchange_money()))
+            print("输出 {}".format(self.exchange_money()))
         else:
             print("只考虑币种：美元(USD, $)，英镑(GBP, £)，欧元(EUR, €)，港币(HKD, HK$)，日元(JPY, ¥)")
 
         return None
 
-input_info = input()
+input_info = input("输入 ")
 rate_obj = RateConverter(input_info)
 rate_obj.run()
 
