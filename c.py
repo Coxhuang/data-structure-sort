@@ -54,7 +54,10 @@
 #
 # MyCls.func()
 
-
-a = "pppppp000009999000"
-a.split("0",1)
+a = [1,2,3,4,5,6]
 print(a)
+b = len(a)
+for index in range(b):
+    print(index)
+    # a.pop(0)
+

@@ -7,6 +7,7 @@
 """
 
 import requests
+import copy
 
 class MyLastVisit(object):
     """二叉树,后序遍历,不适用于多叉树"""
@@ -226,6 +227,30 @@ class MyLastVisit(object):
         data = node.get("children",[])
         return data
 
+    def cut_tree(self, node):
+        """
+        切树枝
+        :param node: 节点 (list)
+        :return: list
+        """
+
+        if self.check_node_id(node): # 栈顶找到目标id
+            return node, False # 返回整个节点, 退出while死循环
+
+        node_temp = copy.copy(node["children"])
+        len_node = len(node["children"])
+        try:
+            i = 0
+            for index in range(len_node):
+                child_str = str(node_temp[index])
+                if child_str.find(self.target_id) == -1: # 不存在, 删除该分支
+                    node["children"].pop(index-i) # 删除分支
+                    i += 1 #
+        except:
+            pass
+
+        return node, True
+
     # TODO last_visit
     def last_visit(self, node):
         """
@@ -234,7 +259,6 @@ class MyLastVisit(object):
         :return: bool
         """
 
-        # node = self.data[0] # 获取左孩子根节点数据
         self.stack_list1.append(node) # 压栈
         flag_stop = False
 
@@ -242,19 +266,24 @@ class MyLastVisit(object):
 
             stack_top = self.stack_list1.pop() # 栈顶元素出栈
             self.stack_list2.append(stack_top)
-            if self.has_right_child(stack_top): # 栈顶元素有右孩子
-                right_child = self.get_right_child(stack_top)
-                self.stack_list1.append(right_child)  # 右孩子压栈
-                if self.check_node_id(right_child):
-                    self.stack_list2.append(right_child)
-                    flag_stop = True
-                    break
+
+            stack_top, ret = self.cut_tree(stack_top) # 切掉没用的树枝
+            if not ret: # 栈顶元素找到目标id
+                break # 退出while
 
             if self.has_left_child(stack_top): # 栈顶元素有左孩子
                 left_child = self.get_left_child(stack_top)
                 self.stack_list1.append(left_child)  # 左孩子压栈
                 if self.check_node_id(left_child):
                     self.stack_list2.append(left_child)
+                    flag_stop = True
+                    break
+
+            if self.has_right_child(stack_top): # 栈顶元素有右孩子
+                right_child = self.get_right_child(stack_top)
+                self.stack_list1.append(right_child)  # 右孩子压栈
+                if self.check_node_id(right_child):
+                    self.stack_list2.append(right_child)
                     flag_stop = True
                     break
 
@@ -273,7 +302,6 @@ class MyLastVisit(object):
             self.last_visit(self.data[1])
 
         return None
-
 
     # TODO run
     def run(self):
