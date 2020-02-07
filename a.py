@@ -5,186 +5,18 @@
 @File ：a.py
 @IDE  ：PyCharm
 """
-a = [
-    {
-        "id": 1000,
-        "name": "女士",
-        "children": [
-            {
-                "id": 1100,
-                "name": "服装",
-                "children": [
-                    {
-                        "id": 1110,
-                        "name": "裙",
-                        "children": [
-                            {
-                                "id": 1111,
-                                "name": "连衣裙a"
-                            },
-                            {
-                                "id": 1112,
-                                "name": "连衣裙b"
-                            },
-                            {
-                                "id": 1113,
-                                "name": "连衣裙c"
-                            }
-                        ]
-                    },
-                    {
-                        "id": 1120,
-                        "name": "针织衫"
-                    },{
-                        "id": 1121,
-                        "name": "针织衫a"
-                    }
-                ]
-            },
-            {
-                "id": 1200,
-                "name": "鞋履",
-                "children": [
-                    {
-                        "id": 1210,
-                        "name": "高跟鞋"
-                    },
-                    {
-                        "id": 1220,
-                        "name": "靴子"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "id": 2000,
-        "name": "男士",
-        "children": [
-            {
-                "id": 2100,
-                "name": "服装",
-                "children": [
-                    {
-                        "id": 4110,
-                        "name": "上衣",
-                        "children": [
-                            {
-                                "id": 2111,
-                                "name": "T恤"
-                            },
-                            {
-                                "id": 2112,
-                                "name": "POLO衫"
-                            }
-                        ]
-                    },
-                    {
-                        "id": 2124,
-                        "name": "西装"
-                    }
-                ]
-            },
-            {
-                "id": 3212,
-                "name": "鞋履",
-                "children": [
-                    {
-                        "id": 2210,
-                        "name": "平底鞋"
-                    },
-                    {
-                        "id": 2220,
-                        "name": "运动鞋",
-                        "children": [
-                            {
-                                "id": 2221,
-                                "name": "篮球鞋"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    }
-]
-
-
-# stack_list = []
-# target = "1113"
-# output_info = []
-#
-# def func(L):
-#
-#     for item in L:
-#         if "children" in item.keys(): # 非叶子节点
-#             if item["id"] == int(target): # 找到id
-#                 print("回溯")
-#                 output_info = stack_list
-#                 print("output_info:",output_info)
-#                 return None
-#             else: # 未找到id
-#                 stack_list.append(item["children"]) # 当前字典压栈
-#                 func(item["children"])  # 递归 - children
-#         else: # 叶子节点
-#             if item["id"] == int(target): # 找到id
-#                 print("回溯")
-#                 output_info = stack_list
-#                 print("output_info:", output_info)
-#                 return None
-#             else: # 未找到id
-#                 print("叶子节点 - 未找到id ")
-#
-#         print("=============")
-#     print("-------------------")
-#
-# func(a)
-
-
-
-# def func(L):
-#     """"""
-#     target = "1113"
-#     output_info = []
-#
-#     for item in a:
-#
-#         flag_stop = False
-#         node = item
-#         stack_list = [item,]
-#
-#         while (stack_list or node):
-#             print("kong")
-#             # 判断节点的id
-#             if node["id"] == int(target): # 相等
-#                 print("回溯")
-#             else: # 不相等 -> 判断是否有孩子节点
-#                 if "children" in node.keys(): # 有孩子节点 -> 遍历左孩子
-#
-#                     while "children" in node.keys(): # 遍历左孩子至叶子节点
-#                         if node["id"] == int(target):  # 相等
-#                             print("回溯")
-#                         else:
-#                             stack_list.append(node["children"][0]) # 左孩子进栈
-#
-#                     # 没有左孩子 -> 栈顶元素出栈,栈顶元素右孩子进栈
-#                     node = stack_list.pop()
-#
-#                 else: # 无孩子节点
-#                     pass
-#
-# func(a)
 
 import requests
 
-class MyFirstVisit(object):
-    """二叉树,先序遍历,不适用于多叉树"""
+class MyLastVisit(object):
+    """二叉树,后序遍历,不适用于多叉树"""
 
     # TODO __init__
-    def __init__(self):
-        self.target_id = 1112 # 用户输入值
+    def __init__(self, target_id):
+        self.target_id = target_id # 用户输入值
         self.data_api = "https://job.xiyanghui.com/api/q1/json" # api接口
-        self.stack_list = [] # 栈
+        self.stack_list1 = [] # 栈
+        self.stack_list2 = [] # 栈
         self.stack_output = []
         self.current_node = "" # 当前节点所在位置
         self.stop = False
@@ -193,7 +25,7 @@ class MyFirstVisit(object):
     def has_left_child(self, node):
         """
         判断节点node是否有左孩子
-        :param node: 节点
+        :param node: 节点 (dict)
         :return: bool
         """
 
@@ -271,106 +103,106 @@ class MyFirstVisit(object):
         :return: 接口数据(list)
         """
 
-        # self.data = requests.get(self.data_api).json()
-        self.data = [
-    {
-        "id": 1000,
-        "name": "女士",
-        "children": [
-            {
-                "id": 1100,
-                "name": "服装",
-                "children": [
-                    {
-                        "id": 1110,
-                        "name": "裙",
-                        "children": [
-                            {
-                                "id": 1111,
-                                "name": "连衣裙a"
-                            },
-                            {
-                                "id": 1112,
-                                "name": "连衣裙b"
-                            }
-                        ]
-                    },
-                    {
-                        "id": 1120,
-                        "name": "针织衫"
-                    },{
-                        "id": 1121,
-                        "name": "针织衫a"
-                    }
-                ]
-            },
-            {
-                "id": 1200,
-                "name": "鞋履",
-                "children": [
-                    {
-                        "id": 1210,
-                        "name": "高跟鞋"
-                    },
-                    {
-                        "id": 1220,
-                        "name": "靴子"
-                    }
-                ]
-            }
-        ]
-    },
-    # {
-    #     "id": 2000,
-    #     "name": "男士",
-    #     "children": [
-    #         {
-    #             "id": 2100,
-    #             "name": "服装",
-    #             "children": [
-    #                 {
-    #                     "id": 4110,
-    #                     "name": "上衣",
-    #                     "children": [
-    #                         {
-    #                             "id": 2111,
-    #                             "name": "T恤"
-    #                         },
-    #                         {
-    #                             "id": 2112,
-    #                             "name": "POLO衫"
-    #                         }
-    #                     ]
-    #                 },
-    #                 {
-    #                     "id": 2124,
-    #                     "name": "西装"
-    #                 }
-    #             ]
-    #         },
-    #         {
-    #             "id": 3212,
-    #             "name": "鞋履",
-    #             "children": [
-    #                 {
-    #                     "id": 2210,
-    #                     "name": "平底鞋"
-    #                 },
-    #                 {
-    #                     "id": 2220,
-    #                     "name": "运动鞋",
-    #                     "children": [
-    #                         {
-    #                             "id": 2221,
-    #                             "name": "篮球鞋"
-    #                         }
-    #                     ]
-    #                 }
-    #             ]
-    #         }
-    #     ]
-    # }
-]
+        self.data = requests.get(self.data_api).json()
+#         self.data = [
+#     {
+#         "id": 1000,
+#         "name": "女士",
+#         "children": [
+#             {
+#                 "id": 1100,
+#                 "name": "服装",
+#                 "children": [
+#                     {
+#                         "id": 1110,
+#                         "name": "裙",
+#                         "children": [
+#                             {
+#                                 "id": 1111,
+#                                 "name": "连衣裙a"
+#                             },
+#                             {
+#                                 "id": 1112,
+#                                 "name": "连衣裙b"
+#                             }
+#                         ]
+#                     },
+#                     {
+#                         "id": 1120,
+#                         "name": "针织衫"
+#                     },{
+#                         "id": 1121,
+#                         "name": "针织衫a"
+#                     }
+#                 ]
+#             },
+#             {
+#                 "id": 1200,
+#                 "name": "鞋履",
+#                 "children": [
+#                     {
+#                         "id": 1210,
+#                         "name": "高跟鞋"
+#                     },
+#                     {
+#                         "id": 1220,
+#                         "name": "靴子"
+#                     }
+#                 ]
+#             }
+#         ]
+#     },
+#     # {
+#     #     "id": 2000,
+#     #     "name": "男士",
+#     #     "children": [
+#     #         {
+#     #             "id": 2100,
+#     #             "name": "服装",
+#     #             "children": [
+#     #                 {
+#     #                     "id": 4110,
+#     #                     "name": "上衣",
+#     #                     "children": [
+#     #                         {
+#     #                             "id": 2111,
+#     #                             "name": "T恤"
+#     #                         },
+#     #                         {
+#     #                             "id": 2112,
+#     #                             "name": "POLO衫"
+#     #                         }
+#     #                     ]
+#     #                 },
+#     #                 {
+#     #                     "id": 2124,
+#     #                     "name": "西装"
+#     #                 }
+#     #             ]
+#     #         },
+#     #         {
+#     #             "id": 3212,
+#     #             "name": "鞋履",
+#     #             "children": [
+#     #                 {
+#     #                     "id": 2210,
+#     #                     "name": "平底鞋"
+#     #                 },
+#     #                 {
+#     #                     "id": 2220,
+#     #                     "name": "运动鞋",
+#     #                     "children": [
+#     #                         {
+#     #                             "id": 2221,
+#     #                             "name": "篮球鞋"
+#     #                         }
+#     #                     ]
+#     #                 }
+#     #             ]
+#     #         }
+#     #     ]
+#     # }
+# ]
 
         return None
 
@@ -381,84 +213,82 @@ class MyFirstVisit(object):
         :return: bool
         """
 
-        if node["id"] == self.target_id:
+        if str(node["id"]) == str(self.target_id):
             return True
         return False
 
-    # TODO first_visit
-    def first_visit(self):
-        """先序遍历"""
+    def get_node_data(self, node):
+        """
+        获取节点数据
+        :return: children(list)
+        """
 
+        data = node.get("children",[])
+        return data
 
-        # 遍历接口数据, 因为根节点数据为空, 所以分别遍历根节点的左右孩子
-        for item in self.data:
-            # print(item)
-            self.stack_list.append(item) # 根节点左孩子压栈
-            self.current_node = item # 游标移动到根节点的左孩子
+    # TODO last_visit
+    def last_visit(self, node):
+        """
+        后序遍历-非递归
+        :param node:
+        :return: bool
+        """
 
-            while (self.stack_list or self.current_node) and not self.stop:
-                # 只要栈不为空且当前节点的值不为空, 就一直循环遍历
+        # node = self.data[0] # 获取左孩子根节点数据
+        self.stack_list1.append(node) # 压栈
+        flag_stop = False
 
-                while self.current_node and not self.stop:
-                    # 一直遍历到左孩子为空为止
-                    if self.check_node_id(self.current_node):
-                        # 找到目标值
-                        print("回溯")
-                        # print(self.stack_list)
-                        self.stop = True
-                        self.stack_output = self.stack_list
-                        break
-                    else:
-                        # 没有找到目标值
-                        if self.has_left_child(self.current_node):
-                            # 有左孩子
-                            # 游标移动到左孩子
-                            self.current_node = self.get_left_child(self.current_node)
-                            # 左孩子数据压栈
-                            self.stack_list.append(self.current_node)
-                        else:
-                            # 没有左孩子
-                            # 游标置为空
-                            self.current_node = {}
+        while self.stack_list1:
 
-                # 左孩子为空, 栈顶元素出栈, 游标移动到栈顶元素的右孩子
-                self.current_node = self.stack_list.pop()
-                if self.has_right_child(self.current_node):
-                    # 有右孩子
-                    # 游标移动到右孩子
-                    self.current_node = self.get_right_child(self.current_node)
-                    self.stack_list.append(self.current_node)
-                else:
-                    # 没有右孩子
-                    # 游标置为空
-                    self.current_node = {}
+            stack_top = self.stack_list1.pop() # 栈顶元素出栈
+            self.stack_list2.append(stack_top)
+            if self.has_right_child(stack_top): # 栈顶元素有右孩子
+                right_child = self.get_right_child(stack_top)
+                self.stack_list1.append(right_child)  # 右孩子压栈
+                if self.check_node_id(right_child):
+                    self.stack_list2.append(right_child)
+                    flag_stop = True
+                    break
+
+            if self.has_left_child(stack_top): # 栈顶元素有左孩子
+                left_child = self.get_left_child(stack_top)
+                self.stack_list1.append(left_child)  # 左孩子压栈
+                if self.check_node_id(left_child):
+                    self.stack_list2.append(left_child)
+                    flag_stop = True
+                    break
+
+        return flag_stop
+
+    def search_data(self):
+        """
+        查找
+        :return:
+        """
+
+        flag_stop = self.last_visit(self.data[0])
+        if not flag_stop:
+            self.stack_list1 = []
+            self.stack_list2 = []
+            self.last_visit(self.data[1])
 
         return None
 
-    def push_stack(self):
-        """
-        出栈
-        :return:
-        """
-        while self.stack_output:
-            temp = self.stack_output.pop()
-            print(temp["name"])
-
-        return
 
     # TODO run
     def run(self):
 
-        # 获取接口数据
-        self.get_data()
-        # print(self.data)
-        # 先序遍历
-        self.first_visit()
-        print(self.stack_list)
-        self.push_stack()
-        return None
+        self.get_data() # 获取接口数据
+
+        self.search_data() # 后序遍历
+
+        ret_list = [(foo["name"]+"") if index+1 == len(self.stack_list2) else foo["name"]+" > " for index,foo in enumerate(self.stack_list2)]
+        output_info = "".join(ret_list)
+        print("输出 {}".format(output_info))
+
+        return output_info
 
 
-
-tree_obj = MyFirstVisit()
+target_id = input("输入 ")
+tree_obj = MyLastVisit(target_id)
 tree_obj.run()
