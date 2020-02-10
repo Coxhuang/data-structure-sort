@@ -53,11 +53,31 @@
 #         print("func")
 #
 # MyCls.func()
+#
+# a = [1,2,3,4,5,6]
+# print(a)
+# b = len(a)
+# for index in range(b):
+#     print(index)
+#     # a.pop(0)
 
-a = [1,2,3,4,5,6]
-print(a)
-b = len(a)
-for index in range(b):
-    print(index)
-    # a.pop(0)
+print(" love ".join(["Everyday","Yourself","Python",]))
+
+# L1 =['abc', ['123','456']]
+# L2 = ['1','2','3']
+# print(L1 > L2)
+# def func(a,*b):
+#     for item in b:
+#         a += item
+#     return a
+# m = 0
+# print(func(m,1,1,2,3,5,7,12,21,33))
+#
+# a = ["a","b","c"]
+# b = a[::-1]
+# print(b)
+#
+#
+# print(1.3 - 1.0 == 0.3)
+
 
