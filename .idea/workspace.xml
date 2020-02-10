@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c16849dc-9cd6-4922-b574-bff1f81db7b3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/insert_sort/straight_insertion_sort/straight_insertion_sort.py" afterPath="$PROJECT_DIR$/insert_sort/straight_insertion_sort/straight_insertion_sort.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/insert_sort/shells_method/shells_method.py" afterPath="$PROJECT_DIR$/insert_sort/shells_method/shells_method.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,6 +20,7 @@
     <SUITE FILE_PATH="coverage/data-structure-sort$insert_sort.coverage" NAME="insert_sort Coverage Results" MODIFIED="1580457602912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/1.插入排序/1.1直接插入排序" />
     <SUITE FILE_PATH="coverage/data-structure-sort$a.coverage" NAME="a Coverage Results" MODIFIED="1581086612413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/data-structure-sort$c.coverage" NAME="c Coverage Results" MODIFIED="1581346944366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/data-structure-sort$shells_method.coverage" NAME="shells_method Coverage Results" MODIFIED="1581351938251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/insert_sort/shells_method" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -27,11 +28,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="straight_insertion_sort.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/insert_sort/straight_insertion_sort/straight_insertion_sort.py">
+      <file leaf-file-name="shells_method.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/insert_sort/shells_method/shells_method.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+            <state relative-caret-position="283">
+              <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -82,7 +83,6 @@
         <option value="$PROJECT_DIR$/1.插入排序/InsertSort.py" />
         <option value="$PROJECT_DIR$/插入排序/InsertSort.py" />
         <option value="$PROJECT_DIR$/insert_sort/straight_insertion_sort/insert_sort.py" />
-        <option value="$PROJECT_DIR$/insert_sort/shells_method/shells_method.py" />
         <option value="$PROJECT_DIR$/insert_sort/InsertSort.py" />
         <option value="$PROJECT_DIR$/insert_sort/insert_sort.py" />
         <option value="$PROJECT_DIR$/selection_sort/straight_selection_sort/straight_selection_sort.py" />
@@ -99,6 +99,7 @@
         <option value="$PROJECT_DIR$/test2.py" />
         <option value="$PROJECT_DIR$/c.py" />
         <option value="$PROJECT_DIR$/insert_sort/straight_insertion_sort/straight_insertion_sort.py" />
+        <option value="$PROJECT_DIR$/insert_sort/shells_method/shells_method.py" />
       </list>
     </option>
   </component>
@@ -186,6 +187,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data-structure-sort" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data-structure-sort" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="insert_sort" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shells_method" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -204,7 +223,7 @@
       <recent name="$PROJECT_DIR$/insert_sort/shells_method" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.straight_insertion_sort">
+  <component name="RunManager" selected="Python.shells_method">
     <configuration default="false" name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -241,24 +260,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="b" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="data-structure-sort" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/b.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="c" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -291,6 +292,24 @@
       <module name="data-structure-sort" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/insert_sort/straight_insertion_sort/straight_insertion_sort.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="shells_method" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/insert_sort/shells_method" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="data-structure-sort" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/insert_sort/shells_method/shells_method.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -512,17 +531,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.test2" />
       <item index="1" class="java.lang.String" itemvalue="Python.a" />
-      <item index="2" class="java.lang.String" itemvalue="Python.b" />
-      <item index="3" class="java.lang.String" itemvalue="Python.c" />
-      <item index="4" class="java.lang.String" itemvalue="Python.straight_insertion_sort" />
+      <item index="2" class="java.lang.String" itemvalue="Python.c" />
+      <item index="3" class="java.lang.String" itemvalue="Python.straight_insertion_sort" />
+      <item index="4" class="java.lang.String" itemvalue="Python.shells_method" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.straight_insertion_sort" />
-        <item index="1" class="java.lang.String" itemvalue="Python.c" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test2" />
-        <item index="3" class="java.lang.String" itemvalue="Python.a" />
-        <item index="4" class="java.lang.String" itemvalue="Python.b" />
+        <item index="0" class="java.lang.String" itemvalue="Python.shells_method" />
+        <item index="1" class="java.lang.String" itemvalue="Python.straight_insertion_sort" />
+        <item index="2" class="java.lang.String" itemvalue="Python.c" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test2" />
+        <item index="4" class="java.lang.String" itemvalue="Python.a" />
       </list>
     </recent_temporary>
   </component>
@@ -594,14 +613,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/1.插入排序/1.1直接插入排序/aa.py" />
     <entry file="file://$PROJECT_DIR$/1.插入排序/1.1直接插入排序/insert_sort1.py" />
-    <entry file="file://$PROJECT_DIR$/insert_sort/shells_method/shells_method.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="23" column="7" lean-forward="false" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/insert_sort/insert_sort.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -643,14 +654,6 @@
           <folding>
             <element signature="e#107#163#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2016.3/python_stubs/-1338315399/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="3062" column="8" lean-forward="false" selection-start-line="3062" selection-start-column="8" selection-end-line="3062" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -724,8 +727,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/insert_sort/straight_insertion_sort/straight_insertion_sort.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        <state relative-caret-position="175">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="29" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2016.3/python_stubs/-1338315399/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="4268" column="8" lean-forward="false" selection-start-line="4268" selection-start-column="8" selection-end-line="4268" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/insert_sort/shells_method/shells_method.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
           <folding />
         </state>
       </provider>
