@@ -61,7 +61,7 @@
 #     print(index)
 #     # a.pop(0)
 
-print(" love ".join(["Everyday","Yourself","Python",]))
+# print(" love ".join(["Everyday","Yourself","Python",]))
 
 # L1 =['abc', ['123','456']]
 # L2 = ['1','2','3']
@@ -80,4 +80,7 @@ print(" love ".join(["Everyday","Yourself","Python",]))
 #
 # print(1.3 - 1.0 == 0.3)
 
+
+for i in range(4,-1,-1):
+    print(i)
 
