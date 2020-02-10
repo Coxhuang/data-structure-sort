@@ -20,7 +20,7 @@ class StraightInsertionSortCls(object):
                 if target[i] > target[i+1]:
                     target[i], target[i+1] = target[i+1], target[i]
                 else:
-                    break
+                    break # 当左边的数小于右边的, 本轮到此为止
 
         return target
 
