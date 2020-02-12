@@ -79,8 +79,21 @@
 #
 #
 # print(1.3 - 1.0 == 0.3)
+def c(test=""):
+    print(test)
+    def a(func):
+        def b(*args, **kw):
+            print("装饰器")
+            print(kw)
+            print(args)
+            return func(*args, **kw)
+        return b
+    return a
 
+@c("kkkk")
+def xxx(x,y):
+    print("主函数")
+    return None
 
-for i in range(4,-1,-1):
-    print(i)
+xxx(x=1,y=2)
 
