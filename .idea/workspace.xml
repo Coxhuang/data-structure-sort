@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c16849dc-9cd6-4922-b574-bff1f81db7b3" name="Default" comment="" />
+    <list default="true" id="c16849dc-9cd6-4922-b574-bff1f81db7b3" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/insert_sort/straight_insertion_sort/直接插入排序.gif" afterPath="$PROJECT_DIR$/insert_sort/straight_insertion_sort/straight_insertion_sort.gif" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +31,8 @@
       <file leaf-file-name="shells_method.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/insert_sort/shells_method/shells_method.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+            <state relative-caret-position="388">
+              <caret line="23" column="12" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -794,8 +796,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/insert_sort/shells_method/shells_method.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+        <state relative-caret-position="388">
+          <caret line="23" column="12" lean-forward="true" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
           <folding />
         </state>
       </provider>
