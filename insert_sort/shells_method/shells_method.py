@@ -17,14 +17,14 @@ class ShellsMethodCls(object):
         while gap >= 1:
             for x in range(len(target)):
                 y = x
-                while y >= gap and target[y - gap] > target[y]:  # 在每一组里面进行直接插入排序
-                    target[y], target[y - gap] = target[y - gap], target[y]
+                while y >= gap and target[y-gap] > target[y]:  # 在每一组里面进行直接插入排序
+                    target[y], target[y-gap] = target[y-gap], target[y]
                     y -= gap
             gap //= 2  # 更新步长
             
         return target
 
 if __name__ == "__main__":
-    oby = ShellsMethodCls()
-    ret = oby.shells_method([9,8,-10,7,6,5,4])
+    obj = ShellsMethodCls()
+    ret = obj.shells_method([9,8,-10,7,6,5,4])
     print(ret)
