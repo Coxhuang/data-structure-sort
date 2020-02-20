@@ -79,21 +79,30 @@
 #
 #
 # print(1.3 - 1.0 == 0.3)
-def c(test=""):
-    print(test)
-    def a(func):
-        def b(*args, **kw):
-            print("装饰器")
-            print(kw)
-            print(args)
-            return func(*args, **kw)
-        return b
-    return a
+# def c(test=""):
+#     print(test)
+#     def a(func):
+#         def b(*args, **kw):
+#             print("装饰器")
+#             print(kw)
+#             print(args)
+#             return func(*args, **kw)
+#         return b
+#     return a
+#
+# @c("kkkk")
+# def xxx(x,y):
+#     print("主函数")
+#     return None
+#
+# xxx(x=1,y=2)
 
-@c("kkkk")
-def xxx(x,y):
-    print("主函数")
-    return None
+#
+# for foo in range(10,-1,-2):
+#     print(foo)
+# print("------")
+# for foo in range(9,-1,-2):
+#     print(foo)
 
-xxx(x=1,y=2)
+
 

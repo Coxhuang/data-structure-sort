@@ -17,17 +17,20 @@ class ShellsMethodCls(object):
         while gap >= 1:
             # 下面：利用直接插入排序的思想对分组数据进行排序
             # range(gap,len(target)):从gap开始
+            print("gap:",gap)
             for x in range(gap, len(target)):
+                print("x:",x)
                 # range(x-gap,-1,-gap) : 从x-gap开始与选定元素开始倒序比较，每个比较元素之间间隔gap
-                for i in range(x-gap, -1, -gap):
+                for i in range(x-gap, -1, -gap): # 倒序,
                     # 如果该组当中两个元素满足交换条件，则进行交换
                     if target[i] > target[i+gap]:
                         target[i], target[i+gap] = target[i+gap],target[i]
+            print("----")
             gap //= 2  # 更新步长
             
         return target
 
 if __name__ == "__main__":
     obj = ShellsMethodCls()
-    ret = obj.shells_method([9,8,-10,7,6,5,4])
+    ret = obj.shells_method([9,8,-10,7,6,5,4,0,2,5,3])
     print(ret)
