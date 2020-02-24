@@ -101,8 +101,13 @@
 # for foo in range(10,-1,-2):
 #     print(foo)
 # print("------")
-# for foo in range(9,-1,-2):
-#     print(foo)
+for foo in range(4):
+    print(foo)
+    break
+else:
+    print("000")
+
+
 
 
 
