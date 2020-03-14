@@ -101,11 +101,16 @@
 # for foo in range(10,-1,-2):
 #     print(foo)
 # print("------")
-for foo in range(4):
-    print(foo)
-    break
-else:
-    print("000")
+
+
+a = 1
+b = 2
+c =3
+
+print(a,b,c)
+
+a =b =c
+print(a,b,c)
 
 
 

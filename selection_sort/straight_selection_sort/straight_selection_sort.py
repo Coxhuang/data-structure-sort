@@ -24,3 +24,8 @@ class StraightSelectionSort(object):
             target[x] = minimum
 
         return target
+
+if __name__ == "__main__":
+    obj = StraightSelectionSort()
+    ret = obj.straight_selection_sort([9,8,7,6,5,4,3,2,1,0,-1,-2,1,2,3,6,7,8,9])
+    print(ret)
