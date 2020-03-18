@@ -281,39 +281,57 @@
 #
 
 
-class Solution:
-    def maxValue(self, grid):
+# class Solution:
+#     def maxValue(self, grid):
+#
+#         self.row = len(grid)  # 行数
+#         self.col = len(grid[0])  # 列数
+#
+#         self.out_list = [] # 用于存储状态
+#         for x in range(self.row):
+#             inner_list = []
+#             for y in range(self.col):
+#                 inner_list.append(-1)
+#             self.out_list.append(inner_list)
+#
+#         return self.dfs(0, 0, grid)
+#
+#
+#     def dfs(self, x, y, grid):
+#
+#         if self.out_list[x][y] != -1:
+#             ret = self.out_list[x][y]
+#         elif y == self.col - 1 and x == self.row - 1:
+#             ret = grid[x][y]
+#         elif x >= (self.row - 1):
+#             ret = self.dfs(x, y + 1, grid) + grid[x][y]
+#         elif y >= (self.col - 1):
+#             ret = self.dfs(x + 1, y, grid) + grid[x][y]
+#         elif x < (self.row - 1) and y < (self.col - 1):
+#             ret = max(self.dfs(x + 1, y, grid), self.dfs(x, y + 1, grid)) + grid[x][y]
+#         else:
+#             ret = 0
+#             print("00000")
+#         self.out_list[x][y] = ret
+#         return ret
+#
+#
+# Solution().maxValue([[1,3,1],[1,5,1],[4,2,1]])
 
-        self.row = len(grid)  # 行数
-        self.col = len(grid[0])  # 列数
 
-        self.out_list = [] # 用于存储状态
-        for x in range(self.row):
-            inner_list = []
-            for y in range(self.col):
-                inner_list.append(-1)
-            self.out_list.append(inner_list)
-
-        return self.dfs(0, 0, grid)
+# def func(a,b = ""):
+#     b += "1"
+#     print(a,b)
+#
+# func(a=2)
+# func(2)
+# func(2)
 
 
-    def dfs(self, x, y, grid):
-
-        if self.out_list[x][y] != -1:
-            ret = self.out_list[x][y]
-        elif y == self.col - 1 and x == self.row - 1:
-            ret = grid[x][y]
-        elif x >= (self.row - 1):
-            ret = self.dfs(x, y + 1, grid) + grid[x][y]
-        elif y >= (self.col - 1):
-            ret = self.dfs(x + 1, y, grid) + grid[x][y]
-        elif x < (self.row - 1) and y < (self.col - 1):
-            ret = max(self.dfs(x + 1, y, grid), self.dfs(x, y + 1, grid)) + grid[x][y]
-        else:
-            ret = 0
-            print("00000")
-        self.out_list[x][y] = ret
-        return ret
-
-
-Solution().maxValue([[1,3,1],[1,5,1],[4,2,1]])
+# x = 2
+# def func():
+#     global x
+#     x = 1
+#     return x
+# func()
+# print(x)  # 1
