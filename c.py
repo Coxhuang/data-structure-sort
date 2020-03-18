@@ -189,24 +189,24 @@
 
 
 # a = [1.0,2.0,3.0,4.0]
-a = [9.0,6.0,4.0,1.0]
-b = ["+","-","*","/"]
-count =0
-for x in a:
-    v1 = a[:]
-    v1.remove(x)
-    for y in v1:
-        v2 = v1[:]
-        v2.remove(y)
-        for z in v2:
-            v3 = v2[:]
-            v3.remove(z)
-            for x1 in b:
-                for x2 in b:
-                    for x3 in b:
-                        print(str(x)+x1+str(y)+x2+str(z)+x3+str(v3[0]),"========",eval(str(x)+x1+str(y)+x2+str(z)+x3+str(v3[0])))
-                        count +=1
-print(count)
+# a = [9.0,6.0,4.0,1.0]
+# b = ["+","-","*","/"]
+# count =0
+# for x in a:
+#     v1 = a[:]
+#     v1.remove(x)
+#     for y in v1:
+#         v2 = v1[:]
+#         v2.remove(y)
+#         for z in v2:
+#             v3 = v2[:]
+#             v3.remove(z)
+#             for x1 in b:
+#                 for x2 in b:
+#                     for x3 in b:
+#                         print(str(x)+x1+str(y)+x2+str(z)+x3+str(v3[0]),"========",eval(str(x)+x1+str(y)+x2+str(z)+x3+str(v3[0])))
+#                         count +=1
+# print(count)
 
 # def f(res,n):
 #     x = False
@@ -238,7 +238,82 @@ print(count)
 #     except:
 #         break
 
+# import random
+# n = 6
+# out_list = []
+# for x in range(1, n+1):
+#     inner_list = []
+#     for y in range(x):
+#         inner_list.append(random.randint(1,9))
+#     out_list.append(inner_list)
+#
+# print(out_list)
+# for z in out_list:
+#     print(z)
+#
+# out_list = [[6], [4, 5], [6, 3, 5], [6, 9, 5, 4], [8, 5, 9, 1, 4], [7, 6, 3, 7, 8, 8]]
+# print(out_list)
+# for index,z in enumerate(out_list):
+#     p_str = ""
+#     for c in range(6 - index):
+#         p_str += " "
+#     for i in z:
+#         p_str += str(i) + " "
+#     print(p_str)
 
 
 
+# def func(x, y, f_list):
+#
+#     if x == 5: # 最底层
+#         return f_list[x][y] # 返回最底层对应的某个元素
+#     else:
+#         return max(func(x+1,y,f_list),func(x+1,y+1,f_list)) + f_list[x][y]
+#
+#
+# def haha():
+#     out_list = [[3], [6, 6], [7, 10, 1], [10, 5, 7, 5], [8, 5, 4, 3, 4], [5, 4, 4, 7, 5, 5]]
+#     n = len(out_list)
+#     a = func(0,0,out_list)
+#     print(a)
+#
+# haha()
+#
 
+
+class Solution:
+    def maxValue(self, grid):
+
+        self.row = len(grid)  # 行数
+        self.col = len(grid[0])  # 列数
+
+        self.out_list = [] # 用于存储状态
+        for x in range(self.row):
+            inner_list = []
+            for y in range(self.col):
+                inner_list.append(-1)
+            self.out_list.append(inner_list)
+
+        return self.dfs(0, 0, grid)
+
+
+    def dfs(self, x, y, grid):
+
+        if self.out_list[x][y] != -1:
+            ret = self.out_list[x][y]
+        elif y == self.col - 1 and x == self.row - 1:
+            ret = grid[x][y]
+        elif x >= (self.row - 1):
+            ret = self.dfs(x, y + 1, grid) + grid[x][y]
+        elif y >= (self.col - 1):
+            ret = self.dfs(x + 1, y, grid) + grid[x][y]
+        elif x < (self.row - 1) and y < (self.col - 1):
+            ret = max(self.dfs(x + 1, y, grid), self.dfs(x, y + 1, grid)) + grid[x][y]
+        else:
+            ret = 0
+            print("00000")
+        self.out_list[x][y] = ret
+        return ret
+
+
+Solution().maxValue([[1,3,1],[1,5,1],[4,2,1]])
