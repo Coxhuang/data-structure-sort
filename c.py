@@ -335,3 +335,74 @@
 #     return x
 # func()
 # print(x)  # 1
+
+
+# str1 = "a12ahc"
+# str2 = "c12ahf"
+# record_list = [] # 记录公共子串位置的二维矩阵
+# len_str = 0 # 最大子串长度
+# stop = 0 # 最大子串末尾位置
+#
+# for x in str1: # 生成二维矩阵, 默认元素: 0
+#     temp_list = []
+#     for y in str2:
+#         temp_list.append(0)
+#     record_list.append(temp_list)
+#
+# for index_x, s1 in enumerate(str1): # 记录公共子串的位置
+#     for index_y, s2 in enumerate(str2):
+#         if s1 == s2:
+#             if index_x == 0 or index_y == 0: # 当前元素位于上边界或者左边界
+#                 record_list[index_x][index_y] = 1
+#             else:
+#                 record_list[index_x][index_y] = record_list[index_x-1][index_y-1] + 1 # 左上角加1
+#
+#         if record_list[index_x][index_y] > len_str:
+#             stop = index_y # 记录最大子串位置
+#             len_str = record_list[index_x][index_y] # 最大子串长度
+#
+# print(str1[stop-len_str+1:stop+1])
+# ret_list = [] # 存放获取的公共子串
+# for index_x, value_list in enumerate(record_list):
+#     for index_y, v in enumerate(value_list):
+#         temp = v
+#         x = index_x
+#         y = index_y
+#         temp_list = []
+#         while temp: # 当遍历到不为0的点时,遍历右下角是否为1, 为1继续遍历右下角
+#             temp_list.append(str1[y])
+#             if x+1 < len(record_list) and y+1 < len(record_list[0]):
+#                 x += 1
+#                 y += 1
+#                 temp = record_list[x][y]
+#             else:
+#                 break
+#         if temp_list:
+#             ret_list.append(temp_list)
+#
+# print(ret_list)
+
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+
+        if not s:
+            return 0
+        record_list = []
+
+        temp_str = s[0]
+        max_count = 0
+        p = len(s)
+        q = 0
+        for index, foo in enumerate(s):
+            target_list = s[index+1:p:]
+            target_index = target_list.find(foo)
+            if target_index > -1:
+                record_list.append(index+target_index+1)
+            else:
+                record_list.append(len(target_list)+1)
+        print(record_list)
+        return max(record_list)
+
+
+print(Solution().lengthOfLongestSubstring("abcabcbb"))
