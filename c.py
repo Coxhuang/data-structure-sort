@@ -383,26 +383,124 @@
 # print(ret_list)
 
 
-class Solution:
-    def lengthOfLongestSubstring(self, s: str) -> int:
+# class Solution:
+#     def lengthOfLongestSubstring(self, s: str) -> int:
+#
+#         if not s:
+#             return 0
+#         record_list = []
+#
+#         temp_str = s[0]
+#         max_count = 0
+#         p = len(s)
+#         q = 0
+#         for index, foo in enumerate(s):
+#             target_list = s[index+1:p:]
+#             target_index = target_list.find(foo)
+#             if target_index > -1:
+#                 record_list.append(index+target_index+1)
+#             else:
+#                 record_list.append(len(target_list)+1)
+#         print(record_list)
+#         return max(record_list)
+#
+#
+# print(Solution().lengthOfLongestSubstring("abcabcbb"))
 
-        if not s:
-            return 0
-        record_list = []
 
-        temp_str = s[0]
-        max_count = 0
-        p = len(s)
-        q = 0
-        for index, foo in enumerate(s):
-            target_list = s[index+1:p:]
-            target_index = target_list.find(foo)
-            if target_index > -1:
-                record_list.append(index+target_index+1)
-            else:
-                record_list.append(len(target_list)+1)
-        print(record_list)
-        return max(record_list)
+# import gevent
+# from gevent.lock import BoundedSemaphore
+#
+# sem = BoundedSemaphore()  # 通过信号量来实现锁机制
+#
+#
+# def f1():
+#     for i in range(5):
+#         sem.acquire()  # 获得锁
+#         print('this is f1 : ' + str(i))
+#         sem.release()  # 释放锁
+#         gevent.sleep(2)  # 模拟IO事件操作，协程执行遇到IO事件时，将进行控制权转让
+#
+#
+# def f2():
+#     for i in range(5):
+#         sem.acquire()
+#         print('this is f2 : ' + str(i))
+#         gevent.sleep(1)
+#         sem.release()
+#
+#
+# t1 = gevent.spawn(f1)  # 孵化任务
+# t2 = gevent.spawn(f2)
+# gevent.joinall([t1, t2])  # 执行一系列协程任务
 
 
-print(Solution().lengthOfLongestSubstring("abcabcbb"))
+
+# def adder(x):
+#     def wrapper(y):
+#         return x + y
+#     return wrapper
+#
+# adder5 = adder(5)
+# print(adder5)
+
+
+# class Solution:
+#     def maximalSquare(self, matrix) -> int:
+#
+#         if not matrix:
+#             return 0
+#         self.len_row = len(matrix) - 1
+#         self.len_col = len(matrix[0]) - 1
+#         max_s = 0
+#         for index_x, x in enumerate(matrix):
+#             for index_y, y in enumerate(x):
+#                 if int(y) > 0: # 遍历每一个元素
+#                     max_s = max(max_s, self.dfs(index_x, index_y, matrix)) # 获取最大边长
+#         return max_s ** 2
+#
+#     def dfs(self, x, y, matrix):
+#
+#         if int(matrix[x][y]) == 0: # 当元素为0时, 边长为0, 返回0
+#             return 0
+#         if x >= self.len_row-1 or y >= self.len_col-1 or x < 0 or y < 0: # 元素在二维数组边界或越界时, 正方形边长为1
+#             return 1
+#
+#         return min(self.dfs(x + 1, y + 1, matrix), self.dfs(x, y + 1, matrix), self.dfs(x + 1, y, matrix)) + 1 # 深度优先搜索, 当前元素的 min(右元素+右下元素+正下元素)
+#
+#
+# Solution().maximalSquare([["1","1","0","1"],["1","1","0","1"],["1","1","1","1"]])
+#
+#
+# class Solution:
+#     def maximalSquare(self, matrix) -> int:
+#
+#         if not matrix:
+#             return 0
+#         self.len_row = len(matrix)
+#         self.len_col = len(matrix[0])
+#         self.recoed_list = [[0 for i in range(self.len_col)] for j in range(self.len_row)] # 二维矩阵--存储每个元素最大边长
+#         max_s = 0 # 最大边长
+#         for index_x, x in enumerate(matrix):
+#             for index_y, y in enumerate(x):
+#                 if int(y) > 0: # 遍历二维矩阵每一个元素, 从(0, 0)开始
+#                     max_s = max(max_s, self.dfs(index_x, index_y, matrix))
+#         return max_s ** 2 # 返回面积
+#
+#     def dfs(self, x, y, matrix):
+#
+#         if self.recoed_list[x][y] > 0: #
+#             ret = self.recoed_list[x][y]
+#         elif int(matrix[x][y]) == 0: # 元素为0时, 正方形边长为0
+#             ret = 0
+#         elif x >= self.len_row-1 or y >= self.len_col-1 or x < 0 or y < 0: # 元素在二维数组边界或越界时, 正方形边长为1
+#             ret = 1
+#         else:
+#             ret = min(self.dfs(x + 1, y + 1, matrix), self.dfs(x, y + 1, matrix), self.dfs(x + 1, y, matrix)) + 1 # 深度优先搜索, 当前元素的 min(右元素+右下元素+正下元素)
+#
+#         self.recoed_list[x][y] = max(self.recoed_list[x][y], ret) # 将当前元素的最大边长保存到新创建的二维矩阵中
+#
+#         return ret
+
+a = [0,1,1,0,0,1,1]
+print()
